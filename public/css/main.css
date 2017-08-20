@@ -1,4 +1,5 @@
 * {
+  margin: auto 0;
   box-sizing: border-box;
   font-family: 'Sniglet', cursive;
 }
@@ -6,11 +7,47 @@
 body {
   background-color: #ecf0f1;
 }
+
+header {
+  background-color: rgba(0, 188, 212, 0.71);
+}
+
 img {
   width: 5vw;
+  padding-top: 5px;
+  border-radius: 2px;
 }
+
 .nav-bar ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
+  align-items: center;
+}
+
+.nav-bar ul a li {
+  color: #ecf0f1;
+}
+
+.gabbles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3498db;
+  margin: 3%;
+  padding: 5%;
+  width: 55%;
+}
+
+.likes {
+  margin-bottom: 5%;
+}
+
+.individual-gabs {
+  margin-bottom: 5%;
+  background-color: #fff;
+}
+
+.individual-gabs p {
+  color: #000000;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Gabble | Login </title>
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
     <link rel="icon" type="img/png" href="/images/Gabble-by-Sebastianpizzaro">
   </head>
@@ -13,13 +13,16 @@
         <ul>
           <a href="/"><img src="http://sebastianpizarro.com/wp-content/uploads/2016/05/Gabble-logo-design.jpg" alt="gabble goat"></a>
           <li><a href="/create">Create New Gab</a></li>
-          <li><a href="/login">Log In</a></li>
-          <li><a href="/login">Log Out</a></li>
+          <li><a href="/signup">Sign Up</a></li>
         </ul>
       </div>
     </header>
     <main>
       <h1>Login</h1>
+      <h3>{{errorMessage}}</h3>
+      {{#errors}}
+        <li>{{message}}</li>
+      {{/errors}}
       <div class="login-form">
         <form class="login-page" action="/login" method="post">
           <div class="username">
@@ -39,6 +42,9 @@
             </div>
         </form>
       </div>
+      <div class="signup-for-gabble">
+        <h3>New User? Click <a href="/signup">Sign Up</a> to register your account!</h3>
+      </div>  
     </main>
 
     <script src="/js/client.js" charset="utf-8"></script>

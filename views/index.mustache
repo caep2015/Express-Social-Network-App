@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Gabble | Home </title>
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
     <link rel="icon" type="img/png" href="/images/Gabble-by-Sebastianpizarro.jpg">
   </head>
@@ -14,12 +13,36 @@
         <ul>
           <a href="/"><img src="http://sebastianpizarro.com/wp-content/uploads/2016/05/Gabble-logo-design.jpg" alt="gabble goat"></a>
           <li><a href="/create">Create New Gab</a></li>
-          <li><a href="/login">Log In</a></li>
-          <li><a href="/login">Log Out</a></li>
+          <li>Welcome, back, {{username}}! <a href="/login">{{^username}}Log In{{/username}}</a></li>
+          <li><a href="/signup">{{^username}}Sign Up{{/username}}</a></li>
+          <form class="" action="/logout" method="post">
+          <input type="submit" name="logout" value="Log Out">
+          </form>
         </ul>
       </div>
     </header>
+    <main>
+        <div class="main-tile">
+        <h1>Welcome to the Gabbleverse, {{username}}!</h1>
+        </div>
+        <div class="gabbles">
+          {{#gabbles}}
+          <div class="individual-gabs">
+            {{username}}:
+            <p>
+              {{message}}
+            </p>
+          <div class="date">
+            {{createdAt}}
+          </div>
+          <div class="likes">
+            <button type="button" name="like">Like</button>
+          </div>
+          </div>
+          {{/gabbles}}
+        </div>
+      </main>
 
-    <script src="/js/client.js" charset="utf-8"></script>
-  </body>
-</html>
+      <script src="/js/client.js" charset="utf-8"></script>
+    </body>
+  </html>
