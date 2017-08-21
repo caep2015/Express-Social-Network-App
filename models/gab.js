@@ -8,16 +8,15 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       validate: {
         notEmpty: {
-          msg: 'Please enter a message to Gabble'
+          msg: 'Please enter a message to Gabble!'
         }
       }
     }
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  }, {});
+
+  Gab.associate = function (models) {
+    Gab.hasMany(models.Like, {as: 'like', foreignKey: 'gabId'})
+  }
+
   return Gab;
 };
